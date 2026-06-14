@@ -38,9 +38,10 @@ RUN if [ "${CUDA_DOCKER_ARCH}" != "default" ]; then \
         -DGGML_CUDA=ON \
         -DGGML_NATIVE=OFF \
         -DLLAMA_BUILD_TESTS=OFF \
+        -DCMAKE_EXE_LINKER_FLAGS=-Wl,--allow-shlib-undefined \
         ${CMAKE_ARGS} \
         . && \
-    cmake --build build --config Release -j"$(nproc)"
+    cmake --build build --config Release --target llama-server -j"$(nproc)"
 
 RUN mkdir -p /out/bin /out/lib && \
     cp build/bin/llama-server /out/bin/ && \
