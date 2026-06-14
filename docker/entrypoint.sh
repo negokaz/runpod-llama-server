@@ -11,6 +11,8 @@ usage:
 examples:
   runpod-llama-server ggml-org/gemma-3-1b-it-GGUF:Q4_K_M --jinja
   runpod-llama-server unsloth/Qwen3-8B-GGUF --hf-file Qwen3-8B-Q4_K_M.gguf
+  runpod-llama-server unsloth/Qwen3-8B-GGUF --hf-file Qwen3-8B-Q4_K_M.gguf --cache-type-k q8_0 --cache-type-v turbo3
+  runpod-llama-server /workspace/models/model.gguf --cache-type-k f16 --cache-type-v turbo4
 EOF
 }
 
