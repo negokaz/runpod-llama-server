@@ -43,7 +43,7 @@ Expose HTTP Ports:
 Command:
 
 ```text
-unsloth/Qwen3-8B-GGUF:Q4_K_M --hf-file Qwen3-8B-Q4_K_M.gguf --jinja --ctx-size 8192 --n-gpu-layers 999
+unsloth/Qwen3-8B-GGUF:Q4_K_M --hf-file Qwen3-8B-Q4_K_M.gguf --jinja --ctx-size 8192
 ```
 
 OpenAI 互換 API は `http://<pod-ip>:8080/v1/chat/completions` で利用できます。
@@ -55,6 +55,8 @@ OpenAI 互換 API は `http://<pod-ip>:8080/v1/chat/completions` で利用でき
 - `LLAMA_ARG_PORT`: 既定値 `8080`
 - `LLAMA_ARG_HOST`: 既定値 `0.0.0.0`
 - `LLAMA_CACHE`: llama.cpp のキャッシュ先。既定値は `/workspace/.cache/llama.cpp`
+
+GPU レイヤー数は既定では固定せず、`llama.cpp` 側の判定に任せます。必要な場合だけ `--n-gpu-layers` または `LLAMA_ARG_N_GPU_LAYERS` で明示指定してください。
 
 ## GitHub Actions
 

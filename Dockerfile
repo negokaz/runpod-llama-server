@@ -4,8 +4,7 @@ ENV HF_HOME=/workspace/.cache/huggingface \
     LLAMA_CACHE=/workspace/.cache/llama.cpp \
     LLAMA_ARG_HOST=0.0.0.0 \
     LLAMA_ARG_PORT=8080 \
-    LLAMA_ARG_CTX_SIZE=8192 \
-    LLAMA_ARG_N_GPU_LAYERS=999
+    LLAMA_ARG_CTX_SIZE=8192
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends bash ca-certificates && \
